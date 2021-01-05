@@ -1,0 +1,10 @@
+<h1>Stupid coaching</h1>
+<div class="container" id="question">
+  <h3> <%= @search.capitalize %> </h3>
+  <h3><i>-You</i></h3>
+</div>
+<div class="container" id="answer">
+  <h3> <%= @coach_answer %> </h3>
+  <h3><i>-Your coach</i></h3>
+</div>
+<%= link_to "Ask another question", ask_path %>
