@@ -1,17 +1,11 @@
 class QuestionsController < ApplicationController
-
-  def ask
-  end
+  def ask; end
 
   def answer
     @search = params[:question]
-    @coach_answer = ''
-    if @search.downcase == 'i am going to work'
-      @coach_answer = 'Great'
-    elsif @search.end_with?('?')
-      @coach_answer = 'Silly question, get dressed and go to work!'
-    else
-      @coach_answer = 'I don\'t care, get dressed and go to work!'
-    end
+    @search = '' if @search.nil?
+    @coach_answer = "I don't care, get dressed and go to work!"
+    @coach_answer = 'Silly question, get dressed and go to work!' if @search.end_with?('?')
+    @coach_answer = 'Great!' if @question == 'I am going to work'
   end
 end
